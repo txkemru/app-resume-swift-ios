@@ -14,4 +14,16 @@ struct resume_appApp: App {
             ContentView()
         }
     }
+    
+    init() {
+        // Настройка внешнего вида приложения
+        setupAppearance()
+    }
+    
+    private func setupAppearance() {
+        // Настройка цвета акцента
+        if let accentColor = UIColor(named: "AccentColor") {
+            UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = accentColor
+        }
+    }
 }
